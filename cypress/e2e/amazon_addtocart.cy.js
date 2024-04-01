@@ -1,9 +1,7 @@
 /// <reference types = "cypress" /> 
-
+import data from "../fixtures/Addtocart.json"
 describe('Add products', () => {
   it('Addingfashionproducts', () => {
-    defaultCommandTimeout: 10000 
-    let classname_of_eachproduct ="puis-card-container s-card-container s-overflow-hidden aok-relative puis-expand-height puis-include-content-margin puis puis-vlnuyii7vw2f22maj5srbceyz s-latency-cf-section puis-card-border";
     //visits amazon website
     cy.visit("https://www.amazon.in");
     //dropdown concept
@@ -14,7 +12,7 @@ describe('Add products', () => {
       .select(3,{force: true})
     })
     //input text concept
-    cy.get("[type='text']").type("Fashion")
+    cy.get("[type='text']").type(data.Type)
     cy.get(".left-pane-results-container")
     .then(()=>
     {

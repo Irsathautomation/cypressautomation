@@ -1,3 +1,4 @@
+import userdata from "../fixtures/Amazonlogin.json"
 describe("Login spec", () => {
   beforeEach("visit webpage", () => {
     //visits amazon website
@@ -10,11 +11,11 @@ describe("Login spec", () => {
   });
   //login
   it("Login", () => {
-     cy.get('[data-nav-ref="nav_ya_signin"]', { timeout: 7000 }).click();
-      //cy.get('[name="email"]', { timeout: 25000 }).type(/*enter the username*/).then(() => {
-      // cy.get('[type="submit"]').click();
-      //});
-      //cy.get('[type="password"]').click().type(/*enter correct password*/);
-      //cy.get("#signInSubmit").click();
+      cy.get('[data-nav-ref="nav_ya_signin"]', { timeout: 7000 }).click();
+      cy.get('[name="email"]', { timeout: 25000 }).type(userdata.Loginemail).then(() => {
+      cy.get('[type="submit"]').click();
+      });
+      cy.get('[type="password"]').click().type(userdata.Password);
+      cy.get("#signInSubmit").click();
   });
 });
