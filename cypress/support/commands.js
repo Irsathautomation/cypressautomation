@@ -16,6 +16,10 @@
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
+Cypress.Commands.add('Email', () => 
+{
+  return cy.get('[data-nav-ref="nav_ya_signin"]',{timeout:7000}).click() 
+ })
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })

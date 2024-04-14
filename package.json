@@ -1,12 +1,24 @@
 {
   "name": "amazon",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automation Amazon",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run ",
+    "browser": "--browser chrome",
+    "addcart": "npx cypress run --spec cypress\\e2e\\amazon_addtocart.cy.js --headed",
+    "login": "npx cypress run --spec cypress\\e2e\\amazonlogin.cy.js --headed",
+    "runall": "npx cypress run --spec cypress\\e2e\\*.cy.js --headed"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Irsath",
+  "license": "ISC",
+  "dependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor":{
+    "nonGlobalStepDefinition":true,
+    "step_defenitions":"cypress/cucumber"
+  }
 }

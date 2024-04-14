@@ -1,10 +1,18 @@
 const { defineConfig } = require("cypress");
-
+const cucumber = require('cypress-cucumber-preprocessor').default
 module.exports = defineConfig({
+  video:true,
+  videoCompression: true,
+  retries:{
+    runMode:1,
+    openMode:0
+  },
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
-    },specpattern:'cypress/e2e/*.js',execTimeout: 80000,
+      on('file:preprocessor',cucumber())
+
+    },specPattern: 'cypress/cucumber/*.feature',execTimeout: 80000,
     
   },
 });

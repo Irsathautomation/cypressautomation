@@ -1,3 +1,4 @@
+import daf from "../support/commands"
 import userdata from "../fixtures/Amazonlogin.json"
 describe("Login spec", () => {
   beforeEach("visit webpage", () => {
@@ -11,11 +12,11 @@ describe("Login spec", () => {
   });
   //login
   it("Login", () => {
-      cy.get('[data-nav-ref="nav_ya_signin"]', { timeout: 7000 }).click();
+      cy.Email();
       cy.get('[name="email"]', { timeout: 25000 }).type(userdata.Loginemail).then(() => {
-      cy.get('[type="submit"]').click();
-      });
-      cy.get('[type="password"]').click().type(userdata.Password);
-      cy.get("#signInSubmit").click();
+      //cy.get('[type="submit"]').click();
+    });
+      //cy.get('[type="password"]').click().type(userdata.Password);
+      //cy.get("#signInSubmit").click();
   });
-});
+})
