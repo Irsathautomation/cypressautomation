@@ -20,6 +20,7 @@ it('My FirstTest case',function() {
         },
         "additionalneeds" : "Breakfast"
     }).then((res)=>{
+        expect(res.body).to.have.property("bookingid")
         cy.log(res.body)
         cy.log(res.statusText)
     })
