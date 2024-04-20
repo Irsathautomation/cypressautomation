@@ -24,6 +24,4 @@ it('My FirstTest case',function() {
         cy.log(res.body)
         cy.log(res.statusText)
     })
-
-
 })})
