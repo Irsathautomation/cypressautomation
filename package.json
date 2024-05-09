@@ -11,6 +11,10 @@
     "login": "npx cypress run --spec cypress\\e2e\\amazonlogin.cy.js --headed",
     "runall": "npx cypress run --spec cypress\\e2e\\*.cy.js --headed"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irsathautomation/cypressautomation.git"
+  },
   "keywords": [],
   "author": "Irsath",
   "license": "ISC",
